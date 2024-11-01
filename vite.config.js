@@ -1,6 +1,6 @@
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  base: "/puzzleSplash/",
+  base: "/puzzleSplashSite-01/",
   plugins: [],
 });
