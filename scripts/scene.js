@@ -47,7 +47,7 @@ export function setMailFormW() {
 
   const mailForm = document.getElementById("mailForm");
   if (formState.isClosed) {
-    mailForm.style.width = "100%";
+    mailForm.style.width = "calc(100% - 40px)";
     // console.log("sizing for a closed form");
   } else {
     if (localMobileCheck) mailForm.style.width = `100%`;

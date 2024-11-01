@@ -1,7 +1,6 @@
 import gsap from "gsap";
 import { setMailFormW } from "./scene.js";
 import { randomizeText, animateText } from "./textAnims.js";
-import { color } from "three/webgpu";
 
 let mm = gsap.matchMedia();
 let formTl;

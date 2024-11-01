@@ -13,6 +13,7 @@
 
 html,
 body {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
   background-color: #0b98d7;
@@ -35,8 +36,13 @@ a:hover {
 }
 
 #myCanvas {
+  margin: 0;
+  padding: 0;
   position: absolute;
   z-index: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
 }
 
 #mailForm::-webkit-scrollbar {
@@ -49,10 +55,14 @@ a:hover {
   margin: 0;
 }
 
+#myForm {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 /* CLOSE HERE YO */
 #mailForm {
-  width: 100%;
-  height: 10%;
   margin: 0;
   background-color: transparent;
 
@@ -70,6 +80,8 @@ a:hover {
 
   min-height: 80px;
   padding: 20px;
+  width: calc(100% - 40px);
+  height: 10%;
 }
 
 form {
