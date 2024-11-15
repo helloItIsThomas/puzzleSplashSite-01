@@ -20,15 +20,13 @@ export function checkHandleSubmit() {
 }
 
 function handleSubmit(e) {
-  console.log("§ SUBMITTED FORM §");
   const form = {
     Name: e.target.name.value,
     Email: e.target.email.value,
     Message: e.target.message.value,
   };
-  console.log(form);
 
-  const serviceID = "string";
+  const serviceID = "service_fbjklpl";
   const templateID = "template_96et0s4";
   const publicKey = "HGRBfY6kZJDUteYUu";
 
@@ -41,22 +39,19 @@ function handleSubmit(e) {
     }, 2000);
   }, 1000);
 
-  // emailJs
-  // .send(serviceID, templateID, form, publicKey)
-  // .then((res) => {
-  // return res;
-  // })
-  // .then((data) => {
-  // console.log(data);
-  // if (data.status < 299) {
-  // console.log("SUCCESS");
-  //
-  // e.target.name.value = "";
-  // e.target.email.value = "";
-  // e.target.message.value = "";
-  // }
-  // })
-  // .catch((error) => {
-  // console.log("ERROR: " + JSON.stringify(error));
-  // });
+  emailJs
+    .send(serviceID, templateID, form, publicKey)
+    .then((res) => {
+      return res;
+    })
+    .then((data) => {
+      if (data.status < 299) {
+        e.target.name.value = "";
+        e.target.email.value = "";
+        e.target.message.value = "";
+      }
+    })
+    .catch((error) => {
+      console.log("ERROR: " + JSON.stringify(error));
+    });
 }

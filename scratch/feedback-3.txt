@@ -5,3 +5,6 @@ ASCII TOOL
 Fix the color blue for the ascii tool.
 The other thing is when downloading video, when you play the video back, it's very jittery.
 **/
+
+
+if i find a way to remove the winding up element, so whenever you click it it does not go to the front.

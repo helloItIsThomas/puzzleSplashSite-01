@@ -6,6 +6,7 @@ export const toRadians = (degrees) => degrees * (Math.PI / 180);
 GV.renderer.domElement.addEventListener("mousedown", function (e) {
   GV.isDragging = true;
   GV.previousMousePosition = { x: e.offsetX, y: e.offsetY };
+  handleRotation(e);
 });
 
 GV.renderer.domElement.addEventListener("mousemove", function (e) {
@@ -27,6 +28,7 @@ GV.renderer.domElement.addEventListener("touchstart", function (e) {
     GV.isDragging = true;
     const touch = e.touches[0];
     GV.previousMousePosition = { x: touch.pageX, y: touch.pageY };
+    handleRotation(e);
   } else if (e.touches.length === 2) {
     handlePinchZoom.start(e);
   }

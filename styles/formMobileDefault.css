@@ -23,6 +23,11 @@ body {
 
 body {
   background: radial-gradient(#0b98d7, #7cdafb);
+  cursor: grab;
+}
+
+body:active {
+  cursor: grabbing;
 }
 
 a {
@@ -68,6 +73,7 @@ a:hover {
 
   box-sizing: border-box;
   pointer-events: none;
+  cursor: default;
   -ms-overflow-style: none;
   scrollbar-width: none;
 
@@ -118,7 +124,7 @@ form {
   pointer-events: all;
 
   overflow: hidden;
-  width: 180px;
+  width: 150px;
   height: 40px;
   left: 0px;
 
@@ -146,7 +152,6 @@ form {
   pointer-events: all;
   text-decoration: none;
   cursor: pointer;
-  color: #7cdafb;
   transition: all 0.2s ease-in-out;
 }
 
