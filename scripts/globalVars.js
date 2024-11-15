@@ -5,6 +5,7 @@ export const GV = {
     antialias: true,
     alpha: true,
   }),
+  mobileCheck: () => window.innerWidth <= 600,
   loadedObject: null,
   isDragging: false,
   rotationVelocity: { x: 0, y: 0 },

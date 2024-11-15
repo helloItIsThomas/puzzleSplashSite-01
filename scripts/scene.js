@@ -43,16 +43,15 @@ window.addEventListener("resize", () => {
 });
 
 export function setMailFormW() {
-  const localMobileCheck = window.innerWidth <= 600;
+  // const localMobileCheck = window.innerWidth <= 600;
+  GV.mobileCheck = window.innerWidth <= 600;
 
   const mailForm = document.getElementById("mailForm");
   if (formState.isClosed) {
     mailForm.style.width = "calc(100% - 40px)";
-    // console.log("sizing for a closed form");
   } else {
-    if (localMobileCheck) mailForm.style.width = `100%`;
+    if (GV.mobileCheck) mailForm.style.width = `100%`;
     else mailForm.style.width = "500px";
-    // console.log("sizing for an open form");
   }
 }
 
@@ -120,6 +119,9 @@ mtlLoader.load("modelInfo/Puzzle_Box.mtl", (materials) => {
     (object) => {
       GV.loadedObject = object;
       scene.add(object);
+      if (GV.mobileCheck()) {
+        GV.loadedObject.scale.set(0.7, 0.7, 0.7);
+      }
     },
     (xhr) => {
       const mailForm = document.getElementById("mailForm");
