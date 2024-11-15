@@ -27,7 +27,8 @@ export function prepareTimeline() {
       console.log("isMobile: " + isMobile);
       formTl
         .to("#mailForm", {
-          height: isMobile ? "100%" : "calc(100% - 60px)",
+          // height: isMobile ? "100%" : "calc(100% - 60px)",
+          height: "100%",
           backgroundColor: "#ffebe4",
           onComplete: () => {
             console.log("formTl played");

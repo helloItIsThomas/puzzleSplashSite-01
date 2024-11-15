@@ -115,6 +115,8 @@ form {
 
 /* CLOSE HERE YO */
 #closeButton {
+  pointer-events: all;
+
   overflow: hidden;
   width: 180px;
   height: 40px;
@@ -141,6 +143,7 @@ form {
 }
 
 #closeButton:hover {
+  pointer-events: all;
   text-decoration: none;
   cursor: pointer;
   color: #7cdafb;
