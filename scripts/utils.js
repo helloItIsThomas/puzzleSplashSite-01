@@ -39,18 +39,22 @@ GV.renderer.domElement.addEventListener("touchstart", function (e) {
   }
 });
 
-GV.renderer.domElement.addEventListener("touchmove", function (e) {
-  e.preventDefault(); // Prevent default scrolling
-  if (GV.isDragging && e.touches.length === 1) {
-    const touch = e.touches[0];
-    handleRotation({
-      offsetX: touch.pageX,
-      offsetY: touch.pageY,
-    });
-  } else if (e.touches.length === 2) {
-    handlePinchZoom.move(e);
-  }
-});
+GV.renderer.domElement.addEventListener(
+  "touchmove",
+  function (e) {
+    e.preventDefault(); // Prevent default scrolling
+    if (GV.isDragging && e.touches.length === 1) {
+      const touch = e.touches[0];
+      handleRotation({
+        offsetX: touch.pageX,
+        offsetY: touch.pageY,
+      });
+    } else if (e.touches.length === 2) {
+      handlePinchZoom.move(e);
+    }
+  },
+  { passive: false }
+);
 
 GV.renderer.domElement.addEventListener("touchend", function (e) {
   if (e.touches.length === 0) {

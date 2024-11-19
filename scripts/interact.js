@@ -61,7 +61,17 @@ export function handleZoom(e) {
 }
 
 // Add event listener for mouse wheel
-window.addEventListener("wheel", handleZoom);
+window.addEventListener(
+  "wheel",
+  function (e) {
+    if (e.ctrlKey) {
+      // Prevent default pinch-zoom behavior
+      e.preventDefault();
+    }
+    handleZoom(e); // Continue to handle custom zoom logic
+  },
+  { passive: false }
+);
 
 // Handle pinch zoom
 export const handlePinchZoom = {
