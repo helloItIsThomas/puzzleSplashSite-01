@@ -10,7 +10,9 @@ GV.renderer.domElement.addEventListener("mousedown", function (e) {
 });
 
 GV.renderer.domElement.addEventListener("mousemove", function (e) {
-  handleRotation(e);
+  if (GV.isDragging) {
+    handleRotation(e);
+  }
 });
 
 GV.renderer.domElement.addEventListener("mouseup", function () {
@@ -28,7 +30,10 @@ GV.renderer.domElement.addEventListener("touchstart", function (e) {
     GV.isDragging = true;
     const touch = e.touches[0];
     GV.previousMousePosition = { x: touch.pageX, y: touch.pageY };
-    handleRotation(e);
+    handleRotation({
+      offsetX: touch.pageX,
+      offsetY: touch.pageY,
+    });
   } else if (e.touches.length === 2) {
     handlePinchZoom.start(e);
   }
@@ -36,18 +41,19 @@ GV.renderer.domElement.addEventListener("touchstart", function (e) {
 
 GV.renderer.domElement.addEventListener("touchmove", function (e) {
   e.preventDefault(); // Prevent default scrolling
-  if (e.touches.length === 1) {
+  if (GV.isDragging && e.touches.length === 1) {
     const touch = e.touches[0];
-    const touchEvent = {
+    handleRotation({
       offsetX: touch.pageX,
       offsetY: touch.pageY,
-    };
-    handleRotation(touchEvent);
+    });
   } else if (e.touches.length === 2) {
     handlePinchZoom.move(e);
   }
 });
 
-GV.renderer.domElement.addEventListener("touchend", function () {
-  GV.isDragging = false;
+GV.renderer.domElement.addEventListener("touchend", function (e) {
+  if (e.touches.length === 0) {
+    GV.isDragging = false;
+  }
 });
