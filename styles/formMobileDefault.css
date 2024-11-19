@@ -16,13 +16,13 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background-color: #0b98d7;
+  background-color: #73c9fd;
   height: 100%;
   width: 100%;
 }
 
 body {
-  background: radial-gradient(#0b98d7, #7cdafb);
+  background: radial-gradient(#0b98d7, #73c9fd);
   cursor: grab;
 }
 
@@ -244,7 +244,7 @@ form {
 
 #sendButton:hover {
   color: black;
-  color: #7cdafb;
+  color: #73c9fd;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
