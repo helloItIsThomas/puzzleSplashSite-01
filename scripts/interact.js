@@ -61,17 +61,11 @@ export function handleZoom(e) {
 }
 
 // Add event listener for mouse wheel
-// Add event listener for mouse wheel
 window.addEventListener(
   "wheel",
   function (e) {
     if (e.ctrlKey) {
       // Prevent default pinch-zoom behavior
-      e.preventDefault();
-    }
-
-    // Prevent vertical scrolling on Safari or other browsers
-    if (e.deltaY !== 0) {
       e.preventDefault();
     }
 
