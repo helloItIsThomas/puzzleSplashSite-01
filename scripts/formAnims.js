@@ -74,6 +74,7 @@ export function prepareTimeline() {
 window.addEventListener("load", () => {
   randomizeText("copyright", "© STUDIO PUZZLE 2024", 1, 100);
   randomizeText("closeButton", "Contact", 1, 100);
+  console.log(formState.isClosed);
 });
 
 export function formToggle() {
