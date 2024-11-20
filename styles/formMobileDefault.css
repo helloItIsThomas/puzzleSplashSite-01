@@ -9,6 +9,7 @@
 
 * {
   font-family: "diaMed", sans-serif;
+  outline: 1px solid red; /* Highlights all elements for debugging */
 }
 
 html,

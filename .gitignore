@@ -21,10 +21,3 @@ node_modules
 *.sln
 *.sw?
 
-# Start Generation Here
-# Model Info Files
-# public/modelInfo/Puzzle_Box.mtl
-# public/modelInfo/InnerGraphics.png
-# public/modelInfo/OuterGraphics.png
-# public/modelInfo/OuterGraphicsBump.png
-# End Generation Here
